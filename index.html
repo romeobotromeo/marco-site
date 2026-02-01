@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARCO — Text Your Site Updates</title>
+    <meta name="description" content="Portfolio sites for designers and agents. Text your changes. They happen instantly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 18vw;
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            margin-bottom: 30px;
+        }
+        
+        .hero .tagline {
+            font-size: 6vw;
+            font-weight: 400;
+            opacity: 0.7;
+            max-width: 90%;
+            margin-bottom: 50px;
+        }
+        
+        /* Kill Section */
+        .kill-section {
+            padding: 80px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .kill-section h2 {
+            font-size: 12vw;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 30px;
+        }
+        
+        .kill-section .providers {
+            font-size: 5vw;
+            opacity: 0.4;
+            text-decoration: line-through;
+            margin-bottom: 40px;
+        }
+        
+        /* How It Works */
+        .how-section {
+            padding: 80px 20px;
+            background: #111;
+        }
+        
+        .how-section h2 {
+            font-size: 8vw;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+        
+        .step {
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 3px solid #fff;
+        }
+        
+        .step-number {
+            font-size: 4vw;
+            opacity: 0.4;
+            font-weight: 600;
+        }
+        
+        .step-text {
+            font-size: 6vw;
+            font-weight: 600;
+        }
+        
+        /* Message Demo */
+        .message-demo {
+            padding: 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .message-bubble {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            max-width: 85%;
+            font-size: 4.5vw;
+        }
+        
+        .message-bubble.sent {
+            background: #0066ff;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message-bubble.received {
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message-time {
+            font-size: 3vw;
+            opacity: 0.4;
+            text-align: right;
+            margin-top: 5px;
+        }
+        
+        /* Pricing */
+        .pricing-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 20vw;
+            font-weight: 900;
+            line-height: 1;
+        }
+        
+        .price-note {
+            font-size: 5vw;
+            opacity: 0.5;
+            margin-top: 10px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: #fff;
+            color: #000;
+        }
+        
+        .cta-section h2 {
+            font-size: 10vw;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 0.95;
+        }
+        
+        .cta-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .cta-form input {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 20px;
+            font-size: 5vw;
+            font-family: inherit;
+            width: 100%;
+        }
+        
+        .cta-form input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        
+        .cta-form button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 25px;
+            font-size: 5vw;
+            font-weight: 900;
+            font-family: inherit;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .cta-form button:hover {
+            background: #222;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 3vw;
+            opacity: 0.3;
+        }
+        
+        footer a {
+            color: inherit;
+        }
+        
+        /* Desktop adjustments */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 12vw; }
+            .hero .tagline { font-size: 2.5vw; }
+            .kill-section h2 { font-size: 8vw; }
+            .kill-section .providers { font-size: 2vw; }
+            .how-section h2 { font-size: 4vw; }
+            .step-number { font-size: 1.5vw; }
+            .step-text { font-size: 2.5vw; }
+            .message-bubble { font-size: 1.8vw; max-width: 60%; }
+            .message-time { font-size: 1vw; }
+            .price { font-size: 12vw; }
+            .price-note { font-size: 2vw; }
+            .cta-section h2 { font-size: 5vw; }
+            .cta-form input { font-size: 1.5vw; padding: 25px; }
+            .cta-form button { font-size: 1.5vw; }
+            footer { font-size: 1vw; }
+            .container { max-width: 1200px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>MARCO</h1>
+            <p class="tagline">Text your site updates.<br>They happen instantly.</p>
+        </div>
+    </section>
+
+    <!-- Kill Your Provider -->
+    <section class="kill-section">
+        <div class="container">
+            <h2>KILL YOUR<br>WEBSITE<br>PROVIDER.</h2>
+            <p class="providers">Squarespace. Wix. Wordpress. Gone.</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section">
+        <div class="container">
+            <h2>HOW IT WORKS</h2>
+            
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-text">We build your site</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-text">You text Marco changes</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-text">They're live in seconds</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Demo -->
+    <section class="message-demo">
+        <div class="container">
+            <div class="message-bubble sent">
+                Change the hero image to the new kitchen shoot
+            </div>
+            <div class="message-bubble received">
+                Done. Your site is updated. ✓
+            </div>
+            <div class="message-time">Delivered 3 seconds ago</div>
+            
+            <div style="height: 40px"></div>
+            
+            <div class="message-bubble sent">
+                Add my new project "Malibu Beach House" to the portfolio
+            </div>
+            <div class="message-bubble received">
+                Added. Check it out: yoursite.com/malibu-beach-house ✓
+            </div>
+            <div class="message-time">Delivered 5 seconds ago</div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="price">$49</div>
+            <div class="price-note">per month. Cancel anytime.</div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>GET EARLY ACCESS</h2>
+            <form class="cta-form" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="waitlist">
+                <p style="display:none"><input name="bot-field"></p>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (optional)">
+                <select name="type" style="background:#000;color:#fff;border:none;padding:20px;font-size:5vw;font-family:inherit;width:100%;">
+                    <option value="">I am a...</option>
+                    <option value="designer">Interior Designer</option>
+                    <option value="agent">Real Estate Agent</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit">JOIN THE WAITLIST</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>MARCO is a <a href="https://gibsonhouse.co">Gibson House</a> product.</p>
+        <p style="margin-top: 10px;">Part of the GATE ecosystem.</p>
+    </footer>
+
+</body>
+</html>

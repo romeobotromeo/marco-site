@@ -432,6 +432,65 @@
             color: var(--text-muted);
         }
         
+        /* ========== DEMO VIDEO ========== */
+        .demo-video-section {
+            padding: 80px 30px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .video-placeholder {
+            background: var(--bg-card);
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 80px 40px;
+            text-align: center;
+            font-size: 24px;
+            color: var(--text-muted);
+        }
+        
+        /* ========== SECURITY ========== */
+        .security-section {
+            padding: 80px 30px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .security-item {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-card);
+        }
+        
+        .security-icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .security-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .security-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
         /* ========== FOOTER ========== */
         footer {
             padding: 40px 30px;
@@ -612,6 +671,46 @@
                 <div class="feature-icon">💬</div>
                 <h3>Real Humans</h3>
                 <p>Not a chatbot. Real people who care about your site looking good.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-video-section">
+        <p class="section-title">See It In Action</p>
+        <h2 class="section-headline">Watch Marco work.</h2>
+        <div class="video-container">
+            <!-- Video embed goes here -->
+            <div class="video-placeholder">🎬 Demo video coming soon</div>
+        </div>
+    </section>
+
+    <section class="security-section">
+        <p class="section-title">Security</p>
+        <h2 class="section-headline">Your data. Your business. Period.</h2>
+        
+        <div class="security-grid">
+            <div class="security-item">
+                <div class="security-icon">🔐</div>
+                <h3>Bank-Level Encryption</h3>
+                <p>All data encrypted in transit and at rest. Same security standards as your bank.</p>
+            </div>
+            
+            <div class="security-item">
+                <div class="security-icon">🚫</div>
+                <h3>We Never Sell Your Data</h3>
+                <p>Your information is yours. We don't sell it, share it, or use it for ads. Ever.</p>
+            </div>
+            
+            <div class="security-item">
+                <div class="security-icon">📱</div>
+                <h3>Your Number Stays Private</h3>
+                <p>Text us from your personal number. It never gets shared or exposed.</p>
+            </div>
+            
+            <div class="security-item">
+                <div class="security-icon">🗑️</div>
+                <h3>Delete Anytime</h3>
+                <p>Cancel and we delete everything. No questions, no lingering data.</p>
             </div>
         </div>
     </section>

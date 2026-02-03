@@ -50,7 +50,19 @@
             color: var(--accent);
         }
         
-        .nav-cta {
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .header-nudge {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .header-phone {
             background: var(--accent);
             color: #000;
             padding: 10px 24px;
@@ -61,7 +73,7 @@
             transition: opacity 0.2s;
         }
         
-        .nav-cta:hover {
+        .header-phone:hover {
             opacity: 0.9;
         }
         
@@ -469,7 +481,10 @@
 
     <header>
         <div class="logo">GIBSON HOUSE <span>MARCO</span></div>
-        <a href="https://buy.stripe.com/4gMcN4gqoacUaIVgbLaAw00" class="nav-cta">Get Started</a>
+        <div class="header-cta">
+            <span class="header-nudge">Go ahead. Give it a go.</span>
+            <a href="sms:+14158436766" class="header-phone">Text Marco → (415) 843-6766</a>
+        </div>
     </header>
 
     <section class="hero">

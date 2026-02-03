@@ -3,746 +3,620 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEXT MARCO — Your Site Changes, Instantly! | $9.99/mo</title>
-    <meta name="description" content="Portfolio sites for $9.99/mo. Text your changes. They happen instantly. First month FREE!">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&family=Courier+Prime:wght@400;700&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
+    <title>MARCO — Website Updates via Text | $9.99/mo</title>
+    <meta name="description" content="Portfolio sites for $9.99/mo. Text your changes. They happen instantly. First month FREE.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0a0a0a;
+            --bg-card: #111111;
+            --border: #222222;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --text-muted: #555555;
+            --accent: #00ff88;
+            --accent-dim: rgba(0, 255, 136, 0.1);
+            --price: #00d4ff;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Courier Prime', monospace;
-            background: #f5f0e6;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 35px, rgba(0,0,0,0.03) 35px, rgba(0,0,0,0.03) 36px),
-                repeating-linear-gradient(90deg, transparent, transparent 35px, rgba(0,0,0,0.03) 35px, rgba(0,0,0,0.03) 36px);
-            color: #1a1a1a;
-            min-height: 100vh;
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
         }
         
-        /* Coupon Border Mixin */
-        .coupon-border {
-            border: 3px dashed #cc0000;
-            position: relative;
-        }
-        .coupon-border::before {
-            content: "✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
-            position: absolute;
-            top: -12px;
-            left: 10px;
-            background: #f5f0e6;
-            padding: 0 8px;
-            font-size: 10px;
-            color: #cc0000;
-            letter-spacing: 2px;
-        }
-        
-        /* Address Label */
-        .address-label {
-            background: #fff;
-            border: 1px solid #000;
-            padding: 8px 12px;
-            font-family: 'Special Elite', cursive;
-            font-size: 11px;
-            transform: rotate(-1.5deg);
-            box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
-            display: inline-block;
-        }
-        
-        /* Starburst */
-        .starburst {
-            background: #ffcc00;
-            color: #cc0000;
-            font-family: 'Bangers', cursive;
-            padding: 25px;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            line-height: 1.1;
-        }
-        
-        .starburst-red {
-            background: #cc0000;
-            color: #fff;
-        }
-        
-        /* Header - Like a real mailer */
-        .mailer-header {
-            background: linear-gradient(135deg, #003087 0%, #0055aa 100%);
-            padding: 10px 15px;
+        /* ========== HEADER ========== */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--border);
         }
         
-        .mailer-header .address-label {
-            font-size: 9px;
+        .logo {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            color: var(--text-muted);
         }
         
-        .barcode {
-            font-family: 'Libre Barcode 39', cursive;
-            font-size: 28px;
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            background: var(--accent);
             color: #000;
-            background: #fff;
-            padding: 2px 8px;
-            letter-spacing: -2px;
+            padding: 10px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: opacity 0.2s;
         }
         
-        .barcode-text {
-            font-family: monospace;
-            font-size: 8px;
+        .nav-cta:hover {
+            opacity: 0.9;
+        }
+        
+        /* ========== HERO ========== */
+        .hero {
+            padding: 100px 30px 80px;
             text-align: center;
-            display: block;
+            background: radial-gradient(ellipse at top, #0a1a0a 0%, #000 60%);
         }
         
-        .postage {
-            background: #fff;
-            border: 2px solid #cc0000;
-            padding: 5px 10px;
-            text-align: center;
-            transform: rotate(2deg);
-        }
-        
-        .postage-text {
-            font-family: 'Special Elite', cursive;
-            font-size: 8px;
-            color: #cc0000;
-        }
-        
-        .postage-price {
-            font-family: 'Bangers', cursive;
-            font-size: 18px;
-            color: #003087;
-        }
-        
-        /* Main Hero - Chaotic */
-        .hero-chaos {
-            background: #fff;
-            margin: 15px;
-            padding: 20px;
-            border: 4px solid #000;
-            position: relative;
-            transform: rotate(-0.5deg);
-        }
-        
-        .hero-chaos::after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 20px;
-            right: 20px;
-            height: 8px;
-            background: repeating-linear-gradient(90deg, #000 0px, #000 10px, transparent 10px, transparent 20px);
-        }
-        
-        .hero-title {
-            font-family: 'Bangers', cursive;
-            font-size: 18vw;
-            color: #cc0000;
-            text-align: center;
-            text-shadow: 4px 4px 0 #ffcc00, 6px 6px 0 #000;
-            line-height: 0.9;
-            letter-spacing: 3px;
-        }
-        
-        .hero-subtitle {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 6vw;
-            text-align: center;
-            color: #003087;
-            margin-top: 10px;
-            transform: rotate(-2deg);
-        }
-        
-        .hero-subtitle span {
-            background: #ffcc00;
-            padding: 2px 8px;
-        }
-        
-        /* Price Explosion */
-        .price-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-            padding: 0 15px;
-        }
-        
-        .price-tag {
-            background: #cc0000;
-            color: #fff;
-            padding: 15px 25px;
-            transform: rotate(3deg);
-            border: 4px solid #ffcc00;
-            text-align: center;
-            box-shadow: 5px 5px 0 #000;
-        }
-        
-        .price-tag .was {
-            font-size: 14px;
-            text-decoration: line-through;
-            opacity: 0.8;
-        }
-        
-        .price-tag .now {
-            font-family: 'Bangers', cursive;
-            font-size: 14vw;
-            line-height: 1;
-        }
-        
-        .price-tag .per {
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent-dim);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        
+        .hero h1 {
+            font-size: clamp(48px, 12vw, 120px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-sub {
+            font-size: clamp(18px, 4vw, 24px);
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero-price {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 20px 40px;
+            border-radius: 8px;
+        }
+        
+        .hero-price .amount {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--price);
+        }
+        
+        .hero-price .period {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+        
+        .hero-price .was {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        
+        .hero-cta {
+            margin-top: 40px;
+        }
+        
+        .hero-cta a {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 18px 48px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .hero-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+        }
+        
+        .hero-note {
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        
+        /* ========== HOW IT WORKS ========== */
+        .how-section {
+            padding: 80px 30px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
         
-        .free-burst {
-            background: #00aa00;
-            color: #fff;
-            font-family: 'Bangers', cursive;
-            font-size: 7vw;
-            padding: 20px 30px;
-            transform: rotate(-5deg);
-            border: 4px solid #fff;
-            box-shadow: 4px 4px 0 #000;
+        .section-headline {
             text-align: center;
-        }
-        
-        .free-burst small {
-            display: block;
-            font-family: 'Courier Prime', monospace;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-        
-        /* Coupon Section */
-        .coupon-section {
-            margin: 25px 15px;
-            padding: 20px;
-            background: #fff;
-            border: 3px dashed #cc0000;
-            position: relative;
-        }
-        
-        .scissors {
-            position: absolute;
-            top: -15px;
-            left: 30px;
-            font-size: 24px;
-            background: #f5f0e6;
-            padding: 0 5px;
-        }
-        
-        .coupon-section h2 {
-            font-family: 'Bangers', cursive;
-            color: #003087;
-            font-size: 8vw;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        
-        .vs-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-        
-        .vs-table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .vs-table .competitor {
-            text-decoration: line-through;
-            color: #cc0000;
-        }
-        
-        .vs-table .us {
-            color: #00aa00;
-            font-weight: 900;
-            font-family: 'Bangers', cursive;
-            font-size: 18px;
-        }
-        
-        .vs-table tr:last-child {
-            background: #ffffa0;
-        }
-        
-        /* How It Works - Handwritten feel */
-        .how-section {
-            margin: 25px 15px;
-            padding: 20px;
-            background: #ffffa0;
-            border: 3px solid #000;
-            transform: rotate(0.5deg);
-        }
-        
-        .how-section h2 {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 7vw;
-            color: #cc0000;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        
-        .step-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 2px dashed #999;
-        }
-        
-        .step-row:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .step-num {
-            background: #cc0000;
-            color: #fff;
-            font-family: 'Bangers', cursive;
-            font-size: 10vw;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-right: 15px;
-            border: 3px solid #000;
-            box-shadow: 3px 3px 0 #ffcc00;
-        }
-        
-        .step-text {
-            font-family: 'Comic Neue', cursive;
-            font-size: 5vw;
+            font-size: clamp(28px, 6vw, 40px);
             font-weight: 700;
+            margin-bottom: 60px;
         }
         
-        .step-text span {
-            color: #cc0000;
-        }
-        
-        /* Text Demo - iPhone Messages style */
-        .demo-section {
-            margin: 25px 15px;
-            padding: 20px;
-            background: linear-gradient(180deg, #1a1a1a 0%, #333 100%);
-            border: 4px solid #000;
-        }
-        
-        .demo-section h2 {
-            font-family: 'Bangers', cursive;
-            color: #00ff00;
-            font-size: 6vw;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        
-        .text-convo {
-            max-width: 350px;
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
-        .bubble {
-            padding: 12px 15px;
-            border-radius: 18px;
-            margin-bottom: 8px;
-            max-width: 85%;
-            font-size: 14px;
-            line-height: 1.3;
+        .step {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
         }
         
-        .bubble.sent {
-            background: #0b93f6;
-            color: #fff;
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        /* ========== DEMO ========== */
+        .demo-section {
+            padding: 80px 30px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .demo-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .phone-frame {
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+        
+        .phone-screen {
+            background: #000;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        
+        .phone-header {
+            background: #1a1a1a;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid #333;
+        }
+        
+        .phone-header span {
+            color: var(--accent);
+        }
+        
+        .messages {
+            padding: 20px;
+            min-height: 350px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        
+        .message.sent {
+            background: var(--accent);
+            color: #000;
             margin-left: auto;
             border-bottom-right-radius: 4px;
         }
         
-        .bubble.received {
-            background: #e5e5ea;
-            color: #000;
+        .message.received {
+            background: #2a2a2a;
+            color: #fff;
             border-bottom-left-radius: 4px;
         }
         
-        .bubble .label {
-            font-size: 10px;
-            opacity: 0.7;
-            margin-bottom: 4px;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            margin: 25px 15px;
-            padding: 25px 20px;
-            background: #cc0000;
-            border: 5px solid #ffcc00;
-            text-align: center;
-            transform: rotate(-0.5deg);
-            box-shadow: 8px 8px 0 #000;
-        }
-        
-        .cta-section h2 {
-            font-family: 'Bangers', cursive;
-            color: #ffcc00;
-            font-size: 10vw;
-            margin-bottom: 10px;
-            text-shadow: 3px 3px 0 #000;
-        }
-        
-        .urgency-bar {
-            background: #000;
-            color: #ffcc00;
-            padding: 10px;
-            font-family: 'Courier Prime', monospace;
-            font-size: 12px;
-            margin-bottom: 20px;
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            50% { opacity: 0.7; }
-        }
-        
-        .cta-button {
+        .message .check {
             display: block;
-            background: #ffcc00;
-            color: #cc0000;
-            font-family: 'Bangers', cursive;
-            font-size: 8vw;
-            padding: 20px;
-            text-decoration: none;
-            border: 4px solid #000;
-            box-shadow: 5px 5px 0 #000;
-            transition: all 0.1s;
-        }
-        
-        .cta-button:active {
-            transform: translate(3px, 3px);
-            box-shadow: 2px 2px 0 #000;
-        }
-        
-        .cta-button small {
-            display: block;
-            font-family: 'Courier Prime', monospace;
             font-size: 12px;
-            color: #000;
             margin-top: 5px;
+            opacity: 0.7;
         }
         
-        /* Fine Print - The chaos */
-        .fine-print {
-            margin: 25px 15px;
-            padding: 15px;
-            background: #fff;
-            border: 1px solid #ccc;
-            font-size: 8px;
-            line-height: 1.4;
-            color: #666;
-            columns: 2;
-            column-gap: 20px;
+        /* ========== COMPARE ========== */
+        .compare-section {
+            padding: 80px 30px;
         }
         
-        .fine-print p {
+        .compare-table {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .compare-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 16px;
+        }
+        
+        .compare-row .name {
+            color: var(--text-secondary);
+        }
+        
+        .compare-row .price {
+            font-weight: 600;
+        }
+        
+        .compare-row .price.bad {
+            color: #ff4444;
+            text-decoration: line-through;
+        }
+        
+        .compare-row.highlight {
+            background: var(--accent-dim);
+            margin: 0 -20px;
+            padding: 16px 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        
+        .compare-row.highlight .name {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .compare-row.highlight .price {
+            color: var(--accent);
+        }
+        
+        /* ========== FEATURES ========== */
+        .features-section {
+            padding: 80px 30px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .feature {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-primary);
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            font-size: 16px;
+            font-weight: 600;
             margin-bottom: 8px;
         }
         
-        /* Guarantee Badge */
-        .guarantee-badge {
-            text-align: center;
-            margin: 20px 15px;
+        .feature p {
+            font-size: 14px;
+            color: var(--text-secondary);
         }
         
-        .guarantee-badge .badge {
+        /* ========== CTA ========== */
+        .cta-section {
+            padding: 100px 30px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        
+        .cta-section h2 {
+            font-size: clamp(32px, 8vw, 56px);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section .sub {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        
+        .cta-section a {
             display: inline-block;
-            background: #003087;
-            color: #fff;
-            padding: 20px 30px;
-            border-radius: 50%;
-            border: 4px solid #ffcc00;
-            font-family: 'Bangers', cursive;
-            font-size: 5vw;
-            text-align: center;
-            line-height: 1.2;
-            box-shadow: 4px 4px 0 #000;
+            background: var(--accent);
+            color: #000;
+            padding: 20px 60px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         
-        .guarantee-badge .badge span {
-            display: block;
-            font-size: 3vw;
-            font-family: 'Courier Prime', monospace;
+        .cta-section a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(0, 255, 136, 0.4);
         }
         
-        /* Footer */
+        .cta-note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        
+        /* ========== FOOTER ========== */
         footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 20px 15px;
+            padding: 40px 30px;
+            border-top: 1px solid var(--border);
             text-align: center;
-            font-size: 11px;
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
         }
         
         footer a {
-            color: #ffcc00;
+            color: var(--accent);
+            text-decoration: none;
         }
         
-        /* Random stamps and marks */
-        .stamp {
-            position: fixed;
-            font-family: 'Bangers', cursive;
-            color: rgba(204, 0, 0, 0.15);
-            font-size: 15vw;
-            transform: rotate(-30deg);
-            pointer-events: none;
-            z-index: -1;
+        .fine-print {
+            max-width: 600px;
+            margin: 30px auto 0;
+            font-size: 11px;
+            color: #444;
+            line-height: 1.8;
         }
         
-        .stamp-1 { top: 20%; left: 5%; }
-        .stamp-2 { top: 50%; right: 5%; transform: rotate(15deg); }
-        .stamp-3 { top: 75%; left: 10%; }
-        
-        /* Desktop */
-        @media (min-width: 768px) {
-            .hero-title { font-size: 10vw; }
-            .hero-subtitle { font-size: 3vw; }
-            .price-tag .now { font-size: 8vw; }
-            .free-burst { font-size: 4vw; }
-            .coupon-section h2 { font-size: 4vw; }
-            .how-section h2 { font-size: 4vw; }
-            .step-num { font-size: 4vw; }
-            .step-text { font-size: 2vw; }
-            .demo-section h2 { font-size: 3vw; }
-            .cta-section h2 { font-size: 5vw; }
-            .cta-button { font-size: 4vw; }
-            .guarantee-badge .badge { font-size: 2.5vw; }
-            .guarantee-badge .badge span { font-size: 1.5vw; }
-            .fine-print { columns: 3; }
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero {
+                padding: 60px 20px 50px;
+            }
+            
+            .hero-price {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Background stamps -->
-    <div class="stamp stamp-1">SAVE!</div>
-    <div class="stamp stamp-2">WOW!</div>
-    <div class="stamp stamp-3">FREE!</div>
-
-    <!-- Mailer Header -->
-    <header class="mailer-header">
-        <div class="address-label">
-            <strong>TO: CURRENT RESIDENT</strong><br>
-            Or: Busy Professional Who<br>
-            Hates Updating Their Website
-        </div>
-        
-        <div style="display: flex; gap: 10px; align-items: center;">
-            <div class="postage">
-                <div class="postage-text">PRESORTED<br>FIRST CLASS</div>
-                <div class="postage-price">FREE</div>
-            </div>
-        </div>
+    <header>
+        <div class="logo">GIBSON HOUSE <span>MARCO</span></div>
+        <a href="https://buy.stripe.com/4gMcN4gqoacUaIVgbLaAw00" class="nav-cta">Get Started</a>
     </header>
 
-    <!-- Hero -->
-    <section class="hero-chaos">
-        <div class="address-label" style="position: absolute; top: -15px; right: 20px; transform: rotate(3deg);">
-            DATED MATERIAL<br>
-            ⚠️ ACT NOW!
+    <section class="hero">
+        <div class="hero-badge">✨ First Month Free</div>
+        <h1>MARCO</h1>
+        <p class="hero-sub">Text your website changes. They happen instantly. No dashboards. No waiting.</p>
+        
+        <div class="hero-price">
+            <span class="was">$33/mo</span>
+            <span class="amount">$9.99</span>
+            <span class="period">/month</span>
         </div>
         
-        <h1 class="hero-title">TEXT MARCO</h1>
-        <p class="hero-subtitle"><span>Your site changes happen INSTANTLY</span></p>
-        
-        <div class="price-section">
-            <div class="price-tag">
-                <div class="was">was $33/mo</div>
-                <div class="now">$9.99</div>
-                <div class="per">per month!</div>
-            </div>
-            
-            <div class="free-burst">
-                FIRST MONTH<br>FREE!
-                <small>No credit card tricks. Cancel anytime.</small>
-            </div>
+        <div class="hero-cta">
+            <a href="https://buy.stripe.com/4gMcN4gqoacUaIVgbLaAw00">Start Free Trial →</a>
         </div>
-        
-        <div style="text-align: center; margin-top: 15px;">
-            <div class="starburst starburst-red" style="font-size: 12px;">
-                LIMITED<br>TIME<br>ONLY!
-            </div>
-        </div>
+        <p class="hero-note">No credit card required. Cancel anytime.</p>
     </section>
 
-    <!-- Coupon Comparison -->
-    <section class="coupon-section">
-        <div class="scissors">✂️</div>
-        <h2>💀 EXPOSED: WHAT YOU'RE OVERPAYING 💀</h2>
-        
-        <table class="vs-table">
-            <tr>
-                <td>Squarespace</td>
-                <td class="competitor">$33/mo ❌</td>
-            </tr>
-            <tr>
-                <td>Wix</td>
-                <td class="competitor">$29/mo ❌</td>
-            </tr>
-            <tr>
-                <td>Wordpress + Hosting</td>
-                <td class="competitor">$25+/mo ❌</td>
-            </tr>
-            <tr>
-                <td>Web Designer</td>
-                <td class="competitor">$200+/mo ❌</td>
-            </tr>
-            <tr>
-                <td><strong>✨ TEXT MARCO ✨</strong></td>
-                <td class="us">$9.99/mo ✓</td>
-            </tr>
-        </table>
-        
-        <p style="text-align: center; margin-top: 15px; font-family: 'Permanent Marker', cursive; font-size: 5vw; color: #cc0000;">
-            EXPOSED!!
-        </p>
-    </section>
-
-    <!-- How It Works -->
     <section class="how-section">
-        <h2>🔥 HERE'S HOW IT WORKS 🔥</h2>
+        <p class="section-title">How It Works</p>
+        <h2 class="section-headline">Three steps. That's it.</h2>
         
-        <div class="step-row">
-            <div class="step-num">1</div>
-            <div class="step-text">We <span>BUILD YOUR SITE</span> (setup is FREE!)</div>
-        </div>
-        
-        <div class="step-row">
-            <div class="step-num">2</div>
-            <div class="step-text">You <span>TEXT MARCO</span> what you want changed</div>
-        </div>
-        
-        <div class="step-row">
-            <div class="step-num">3</div>
-            <div class="step-text">Changes go <span>LIVE IN SECONDS</span>. That's it!</div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>We build your site</h3>
+                <p>Tell us about your business. We create a clean, professional portfolio site. Setup is free.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>You text Marco</h3>
+                <p>"Add this photo." "Change my number." "Update my bio." Whatever you need, whenever you need it.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>It's live in minutes</h3>
+                <p>No logins. No editors. No calls. Your site is updated before you put your phone down.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Demo -->
     <section class="demo-section">
-        <h2>👀 SEE IT IN ACTION 👀</h2>
+        <p class="section-title">See It In Action</p>
+        <h2 class="section-headline">Just text. Done.</h2>
         
-        <div class="text-convo">
-            <div class="bubble sent">
-                <div class="label">You →</div>
-                Change my hero image to the new kitchen photo
-            </div>
-            <div class="bubble received">
-                <div class="label">← Marco</div>
-                Done! Your site is updated 🎉
-            </div>
-            
-            <div style="height: 15px"></div>
-            
-            <div class="bubble sent">
-                <div class="label">You →</div>
-                Add my Malibu project to portfolio
-            </div>
-            <div class="bubble received">
-                <div class="label">← Marco</div>
-                Added! Check it out: yoursite.com/malibu ✅
-            </div>
-            
-            <div style="height: 15px"></div>
-            
-            <div class="bubble sent">
-                <div class="label">You →</div>
-                Change phone number to 555-1234
-            </div>
-            <div class="bubble received">
-                <div class="label">← Marco</div>
-                Updated everywhere! 📱
+        <div class="demo-container">
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-header">Messages · <span>Marco</span></div>
+                    <div class="messages">
+                        <div class="message sent">Add my new kitchen project to the portfolio</div>
+                        <div class="message received">
+                            Done! Your portfolio is updated.
+                            <span class="check">yoursite.com/kitchen ✓</span>
+                        </div>
+                        
+                        <div class="message sent">Change phone number to (555) 123-4567</div>
+                        <div class="message received">
+                            Updated everywhere!
+                            <span class="check">Live now ✓</span>
+                        </div>
+                        
+                        <div class="message sent">Add "Licensed & Insured" to the homepage</div>
+                        <div class="message received">
+                            Added to your hero section.
+                            <span class="check">Looks great ✓</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Security Section -->
-    <section style="margin: 25px 15px; padding: 20px; background: #003087; border: 4px solid #00aa00; transform: rotate(0.3deg);">
-        <h2 style="font-family: 'Bangers', cursive; color: #00ff00; font-size: 7vw; text-align: center; margin-bottom: 15px; text-shadow: 2px 2px 0 #000;">
-            🔒 YOUR DATA IS SACRED 🔒
-        </h2>
+    <section class="compare-section">
+        <p class="section-title">Pricing</p>
+        <h2 class="section-headline">Stop overpaying.</h2>
         
-        <div style="display: grid; gap: 15px;">
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-left: 4px solid #00ff00;">
-                <div style="font-family: 'Bangers', cursive; color: #ffcc00; font-size: 5vw; margin-bottom: 5px;">🚫 WE NEVER SELL YOUR INFO</div>
-                <div style="color: #fff; font-size: 14px;">Your phone number, your business, your data — stays YOURS. Period. No exceptions.</div>
+        <div class="compare-table">
+            <div class="compare-row">
+                <span class="name">Squarespace</span>
+                <span class="price bad">$33/mo</span>
             </div>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-left: 4px solid #00ff00;">
-                <div style="font-family: 'Bangers', cursive; color: #ffcc00; font-size: 5vw; margin-bottom: 5px;">📵 ZERO SPAM. FOREVER.</div>
-                <div style="color: #fff; font-size: 14px;">No "partner offers." No random texts. No selling to agents or lenders. Your inbox is YOUR inbox.</div>
+            <div class="compare-row">
+                <span class="name">Wix</span>
+                <span class="price bad">$29/mo</span>
             </div>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-left: 4px solid #00ff00;">
-                <div style="font-family: 'Bangers', cursive; color: #ffcc00; font-size: 5vw; margin-bottom: 5px;">🔐 BANK-LEVEL ENCRYPTION</div>
-                <div style="color: #fff; font-size: 14px;">Every message encrypted. Every file secured. Same security your bank uses. Because your business deserves it.</div>
+            <div class="compare-row">
+                <span class="name">Web Designer</span>
+                <span class="price bad">$200+/mo</span>
             </div>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-left: 4px solid #00ff00;">
-                <div style="font-family: 'Bangers', cursive; color: #ffcc00; font-size: 5vw; margin-bottom: 5px;">👀 YOU CONTROL EVERYTHING</div>
-                <div style="color: #fff; font-size: 14px;">Want your data deleted? Text "DELETE" and it's gone. No 30-day wait. No "processing." Gone.</div>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 20px; padding: 15px; background: #000; border: 2px dashed #00ff00;">
-            <div style="font-family: 'Permanent Marker', cursive; color: #00ff00; font-size: 4vw;">
-                "We're not in the data business.<br>We're in the helping-you business."
+            <div class="compare-row highlight">
+                <span class="name">Marco</span>
+                <span class="price">$9.99/mo ✓</span>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <section class="features-section">
+        <p class="section-title">Why Marco</p>
+        <h2 class="section-headline">Built for people who work.</h2>
+        
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>No Dashboards</h3>
+                <p>Stop fighting with website builders. Just text what you want changed.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Updates</h3>
+                <p>Text at 9am. Live by 9:05. No more waiting days for changes.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Your Data Stays Yours</h3>
+                <p>We never sell your info. Zero spam. Ever. That's a promise.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Real Humans</h3>
+                <p>Not a chatbot. Real people who care about your site looking good.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
-        <h2>🚨 GET STARTED NOW! 🚨</h2>
-        <div class="urgency-bar">
-            ⚠️ WARNING: ONLY 50 SPOTS AT THIS PRICE ⚠️
-        </div>
-        
-        <a href="https://buy.stripe.com/4gMcN4gqoacUaIVgbLaAw00" class="cta-button">
-            🔥 CLAIM MY SPOT 🔥
-            <small>First month FREE → Then $9.99/mo</small>
-        </a>
+        <h2>Ready?</h2>
+        <p class="sub">First month free. $9.99/mo after. Cancel anytime.</p>
+        <a href="https://buy.stripe.com/4gMcN4gqoacUaIVgbLaAw00">Get Started →</a>
+        <p class="cta-note">Setup takes 5 minutes.</p>
     </section>
 
-    <!-- Guarantee -->
-    <div class="guarantee-badge">
-        <div class="badge">
-            100%<br>MONEY<br>BACK
-            <span>No contracts. Cancel anytime.</span>
-        </div>
-    </div>
-
-    <!-- Fine Print -->
-    <div class="fine-print">
-        <p>*Offer valid for new customers only. First month free, then $9.99/mo. Cancel anytime, no questions asked. We're not like those other guys.</p>
-        <p>**"Instantly" means within business hours. We're fast, but we're human (kind of). Updates typically happen in under 5 minutes during 9am-9pm PST.</p>
-        <p>†Price comparison based on published rates as of Feb 2026. Competitors may charge less for their "basic" plans that don't actually do anything useful.</p>
-        <p>‡The 50 spots thing is real. When they're gone, price goes up. This isn't fake scarcity. We just can't onboard everyone at once.</p>
-        <p>§By signing up, you agree that traditional website builders are a scam and texting is superior. Terms of service at gibsonhouse.co/terms.</p>
-        <p>¶Marco is a product of Gibson House LLC. Patent pending on the revolutionary technology of "reading texts and doing stuff."</p>
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <p>TEXT MARCO is a <a href="https://gibsonhouse.co">Gibson House</a> product.</p>
-        <p>Part of the GATE ecosystem. Questions? Just text us. That's kind of our thing.</p>
-        <p style="margin-top: 10px; opacity: 0.7;">© 2026 Gibson House LLC. Los Angeles, CA.</p>
+        <p><strong>Marco</strong> is a <a href="https://gibsonhouse.co">Gibson House</a> product.</p>
+        <p>Los Angeles, CA · (415) 843-6766</p>
+        
+        <div class="fine-print">
+            First month free for new customers, then $9.99/mo. Cancel anytime. 
+            "Instantly" means during business hours (9am-9pm PST). 
+            We're fast, not magic. © 2026 Gibson House LLC.
+        </div>
     </footer>
 
 </body>

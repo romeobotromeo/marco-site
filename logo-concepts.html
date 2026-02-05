@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marco Logo Concepts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            justify-content: center;
+        }
+        .concept {
+            text-align: center;
+            padding: 40px;
+            background: #111;
+            border-radius: 16px;
+            border: 1px solid #222;
+        }
+        .concept h3 {
+            margin-top: 20px;
+            color: #888;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .wordmark {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Concept 1: Rounded bubble with M -->
+<div class="concept">
+    <div class="logo-container">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+            <rect x="5" y="5" width="60" height="50" rx="12" fill="#00ff88"/>
+            <polygon points="15,55 25,55 15,70" fill="#00ff88"/>
+            <text x="35" y="42" font-family="Inter" font-weight="900" font-size="32" fill="#000" text-anchor="middle">M</text>
+        </svg>
+        <span class="wordmark">MARCO</span>
+    </div>
+    <h3>1. Classic Bubble</h3>
+</div>
+
+<!-- Concept 2: Circle bubble with M -->
+<div class="concept">
+    <div class="logo-container">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="35" cy="32" r="28" fill="#00ff88"/>
+            <polygon points="20,52 35,52 25,70" fill="#00ff88"/>
+            <text x="35" y="42" font-family="Inter" font-weight="900" font-size="30" fill="#000" text-anchor="middle">M</text>
+        </svg>
+        <span class="wordmark">MARCO</span>
+    </div>
+    <h3>2. Round Bubble</h3>
+</div>
+
+<!-- Concept 3: Just the M as bubble shape -->
+<div class="concept">
+    <div class="logo-container">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+            <path d="M10,15 L10,50 Q10,60 20,60 L25,60 L20,75 L35,60 L60,60 Q70,60 70,50 L70,15 Q70,5 60,5 L20,5 Q10,5 10,15" fill="#00ff88"/>
+            <text x="40" y="42" font-family="Inter" font-weight="900" font-size="28" fill="#000" text-anchor="middle">M</text>
+        </svg>
+        <span class="wordmark">MARCO</span>
+    </div>
+    <h3>3. Modern Bubble</h3>
+</div>
+
+<!-- Concept 4: Minimal - M is the bubble -->
+<div class="concept">
+    <div class="logo-container">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+            <path d="M5,10 L5,55 L15,55 L15,30 L35,50 L55,30 L55,55 L65,55 L65,10 L35,40 Z" fill="#00ff88"/>
+            <polygon points="5,55 5,75 20,55" fill="#00ff88"/>
+        </svg>
+        <span class="wordmark">MARCO</span>
+    </div>
+    <h3>4. M = Bubble</h3>
+</div>
+
+<!-- Concept 5: Stacked / App Icon style -->
+<div class="concept">
+    <svg width="120" height="140" viewBox="0 0 120 140">
+        <rect x="10" y="10" width="100" height="80" rx="20" fill="#00ff88"/>
+        <polygon points="25,90 45,90 30,115" fill="#00ff88"/>
+        <text x="60" y="65" font-family="Inter" font-weight="900" font-size="40" fill="#000" text-anchor="middle">M</text>
+        <text x="60" y="135" font-family="Inter" font-weight="800" font-size="18" fill="#fff" text-anchor="middle" letter-spacing="2">MARCO</text>
+    </svg>
+    <h3>5. Stacked (App Icon)</h3>
+</div>
+
+<!-- Concept 6: Outline style -->
+<div class="concept">
+    <div class="logo-container">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+            <rect x="8" y="8" width="54" height="44" rx="10" fill="none" stroke="#00ff88" stroke-width="4"/>
+            <polygon points="16,52 28,52 18,68" fill="none" stroke="#00ff88" stroke-width="4" stroke-linejoin="round"/>
+            <text x="35" y="40" font-family="Inter" font-weight="900" font-size="26" fill="#00ff88" text-anchor="middle">M</text>
+        </svg>
+        <span class="wordmark" style="color: #00ff88">MARCO</span>
+    </div>
+    <h3>6. Outline (Light BG use)</h3>
+</div>
+
+</body>
+</html>

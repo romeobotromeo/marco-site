@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3761 Glenalbyn Dr | Mount Washington | $1,850,000</title>
+    <meta name="description" content="Fully reimagined Mount Washington hillside residence with 14-foot ceilings, wall of windows, and expansive city views. 3 bed, 3 bath. Listed by Joshua Gibson.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --black: #0a0a0a;
+            --white: #fafafa;
+            --gold: #c9a962;
+            --gray: #888;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%),
+                        url('hero.jpg') center/cover no-repeat;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .price {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .address {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .specs {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .spec {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .spec strong {
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        /* Features */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .features h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #222;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        
+        .feature-list li::before {
+            content: "—";
+            margin-right: 1rem;
+            color: var(--gold);
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 4rem 0;
+            background: #0a0a0a;
+        }
+        
+        .gallery h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+            color: var(--gold);
+        }
+        
+        .gallery-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0 2rem 2rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .gallery-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: #222;
+        }
+        
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: var(--gold);
+        }
+        
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 80vw;
+            max-width: 500px;
+            scroll-snap-align: center;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        /* Floorplan */
+        .floorplan {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: #111;
+        }
+        
+        .floorplan h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+        }
+        
+        .floorplan img {
+            max-width: 100%;
+            max-height: 600px;
+            border-radius: 4px;
+        }
+        
+        /* Details Grid */
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: #111;
+        }
+        
+        .detail-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .detail-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+        
+        .detail-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--black);
+        }
+        
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .agent-name {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .agent-license {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--black);
+            background: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--white);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray);
+            border-top: 1px solid #222;
+        }
+        
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="price">$1,850,000</div>
+            <div class="address">3761 Glenalbyn Dr, Los Angeles 90065</div>
+            <div class="specs">
+                <div class="spec"><strong>3</strong> Beds</div>
+                <div class="spec"><strong>3</strong> Baths</div>
+                <div class="spec"><strong>7,746</strong> Sq Ft Lot</div>
+                <div class="spec"><strong>$771</strong> / Sq Ft</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <h2>Property Highlights</h2>
+        <ul class="feature-list">
+            <li>Fully reimagined Mount Washington hillside residence</li>
+            <li>14-foot ceilings and floor-to-ceiling wall of windows</li>
+            <li>Expansive city views from foyer to living area</li>
+            <li>Private hillside setting with serene surroundings</li>
+            <li>Kitchen with leathered marble counters and mirrored island</li>
+            <li>Built-in dining bench and top-of-the-line appliances</li>
+            <li>Primary suite with terrazzo spa en suite and walk-in closet</li>
+            <li>Two additional bedrooms with jacuzzi deck access</li>
+            <li>2-car garage</li>
+        </ul>
+    </section>
+    
+    <section class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-scroll">
+            <div class="gallery-item"><img src="photo1.jpg" alt="Exterior twilight view"></div>
+            <div class="gallery-item"><img src="photo2.jpg" alt="Designer bathroom"></div>
+            <div class="gallery-item"><img src="photo3.jpg" alt="Bedroom workspace"></div>
+            <div class="gallery-item"><img src="photo4.jpg" alt="Primary bedroom"></div>
+            <div class="gallery-item"><img src="photo5.jpg" alt="Spa bathroom"></div>
+        </div>
+    </section>
+    
+    <section class="floorplan">
+        <h2>Floor Plan</h2>
+        <img src="floorplan.jpg" alt="3761 Glenalbyn Floor Plan">
+    </section>
+    
+    <section class="details">
+        <div class="detail-card">
+            <div class="detail-value">1991</div>
+            <div class="detail-label">Year Built</div>
+        </div>
+        <div class="detail-card">
+            <div class="detail-value">3/3</div>
+            <div class="detail-label">Bed / Bath</div>
+        </div>
+        <div class="detail-card">
+            <div class="detail-value">7,746</div>
+            <div class="detail-label">Lot Sq Ft</div>
+        </div>
+        <div class="detail-card">
+            <div class="detail-value">2 Car</div>
+            <div class="detail-label">Garage</div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <h2>Schedule a Private Showing</h2>
+        <div class="agent-name">Joshua Gibson</div>
+        <div class="agent-license">DRE #02204427 • West Shores Realty, Inc.</div>
+        <a href="tel:+13102951136" class="cta-button">Call Now</a>
+    </section>
+    
+    <footer>
+        <p>Listing data from CRMLS #SB26024676</p>
+        <p>Built instantly by <a href="https://textmarco.com">TextMarco</a></p>
+    </footer>
+</body>
+</html>

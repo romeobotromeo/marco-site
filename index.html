@@ -77,6 +77,19 @@
             opacity: 0.9;
         }
         
+        .header-consent {
+            font-size: 10px;
+            color: var(--text-muted);
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+        }
+        
+        .header-consent a {
+            color: var(--text-muted);
+            text-decoration: underline;
+        }
+        
         /* ========== HERO ========== */
         .hero {
             padding: 100px 30px 80px;
@@ -658,6 +671,7 @@
         <div class="header-cta">
             <span class="header-nudge">Go ahead. Give it a go.</span>
             <a href="sms:+14158436766" class="header-phone">Text Marco → (415) 843-6766</a>
+            <span class="header-consent">By texting, you consent to receive SMS. <a href="/privacy">Privacy</a></span>
         </div>
     </header>
 
@@ -689,8 +703,7 @@
             </form>
             <p id="form-message" class="form-message"></p>
         </div>
-        <p class="hero-note">We'll text you when it's your turn.</p>
-        <p class="hero-note">No spam. Unsubscribe anytime.</p>
+        <p class="hero-note">We'll text you when it's your turn. By joining, you consent to receive SMS messages from Marco. Msg & data rates may apply. Reply STOP to opt out. <a href="/privacy" style="color: var(--text-muted);">Privacy Policy</a></p>
     </section>
 
     <section class="how-section">
@@ -854,6 +867,7 @@
         </form>
         <p id="form-message-2" class="form-message"></p>
         <p class="cta-note">First month free when you sign up.</p>
+        <p class="cta-note" style="margin-top: 10px; font-size: 11px;">By joining, you consent to receive SMS. Msg & data rates apply. Reply STOP to opt out. <a href="/privacy" style="color: var(--text-muted);">Privacy</a></p>
     </section>
 
     <footer>

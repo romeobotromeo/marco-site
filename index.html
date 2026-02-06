@@ -545,6 +545,37 @@
             color: var(--text-secondary);
         }
         
+        /* ========== SAMPLES ========== */
+        .samples-section {
+            padding: 80px 30px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        
+        .samples-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .samples-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px 24px;
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .samples-links a:hover {
+            background: var(--accent);
+            color: #000;
+        }
+        
         /* ========== FOOTER ========== */
         footer {
             padding: 40px 30px;
@@ -855,6 +886,17 @@
                 <h3>Delete Anytime</h3>
                 <p>Cancel and we delete everything. No questions, no lingering data.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="samples-section">
+        <p class="section-title">Samples</p>
+        <h2 class="section-headline">See what Marco's been cooking up.</h2>
+        <div class="samples-links">
+            <a href="https://romeobotromeo.github.io/marco-demo-realtor/" target="_blank">Real Estate Agent →</a>
+            <a href="https://romeobotromeo.github.io/marco-demo-pool/" target="_blank">Pool Service →</a>
+            <a href="https://romeobotromeo.github.io/marco-demo-electric/" target="_blank">Electrician →</a>
+            <a href="https://romeobotromeo.github.io/marco-demo-influencer/" target="_blank">Influencer →</a>
         </div>
     </section>
 

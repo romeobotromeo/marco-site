@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NW Plumbing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --bg: #0a1628;
+            --text: #ffffff;
+            --accent: #00b4d8;
+            --muted: #7b8fa3;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, var(--bg) 0%, #050d18 100%);
+        }
+        
+        .hero-emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: clamp(36px, 8vw, 64px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            font-size: clamp(18px, 4vw, 24px);
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 20px 56px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 180, 216, 0.3);
+        }
+        
+        .badges {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .badge {
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--accent);
+        }
+        
+        .services {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: var(--accent);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-item {
+            background: #0f1f35;
+            border: 1px solid #1a2f4a;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .service-item .icon { font-size: 36px; margin-bottom: 15px; }
+        .service-item h3 { font-size: 18px; margin-bottom: 10px; }
+        .service-item p { font-size: 14px; color: var(--muted); }
+        
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1a2f4a;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-emoji">🔧</div>
+        <h1>NW Plumbing</h1>
+        <p class="tagline">Professional plumbing you can trust. Fast response, fair prices.</p>
+        <a href="tel:+1XXXXXXXXXX" class="cta-button">📞 Call Now</a>
+        <div class="badges">
+            <span class="badge">⚡ Fast Response</span>
+            <span class="badge">✅ Licensed & Insured</span>
+            <span class="badge">💯 Satisfaction Guaranteed</span>
+        </div>
+    </section>
+    
+    <section class="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="icon">🚿</div>
+                <h3>Leak Repair</h3>
+                <p>Faucets, pipes, fixtures — we stop the drip.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🚽</div>
+                <h3>Drain Cleaning</h3>
+                <p>Clogged drains cleared fast. Any drain, any time.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🔥</div>
+                <h3>Water Heaters</h3>
+                <p>Repair, replacement, installation.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🏠</div>
+                <h3>Full Service</h3>
+                <p>New construction, remodels, repairs.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2026 NW Plumbing · Los Angeles, CA</p>
+        <p>Site by <a href="https://textmarco.com">Marco</a> ⚡</p>
+    </footer>
+</body>
+</html>

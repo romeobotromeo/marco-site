@@ -15,6 +15,7 @@
             --accent-light: #3d7dd4;
             --red: #c41e3a;
             --muted: #7b8fa3;
+            --green: #00a67e;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -89,6 +90,15 @@
             background: var(--accent-light);
         }
         
+        .cta-button.green {
+            background: var(--green);
+        }
+        
+        .cta-button.green:hover {
+            background: #00c896;
+            box-shadow: 0 10px 40px rgba(0, 166, 126, 0.4);
+        }
+        
         .badges {
             margin-top: 30px;
             display: flex;
@@ -142,6 +152,109 @@
         .service-item .icon { font-size: 36px; margin-bottom: 15px; }
         .service-item h3 { font-size: 16px; margin-bottom: 10px; }
         .service-item p { font-size: 13px; color: var(--muted); }
+        
+        /* Payment Section */
+        .payment-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0a1628 0%, #0f1f35 100%);
+            text-align: center;
+        }
+        
+        .payment-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--green);
+        }
+        
+        .payment-section .subtitle {
+            color: var(--muted);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .payment-card {
+            background: #0f1f35;
+            border: 2px solid #1a2f4a;
+            border-radius: 16px;
+            padding: 30px;
+            flex: 1;
+            min-width: 250px;
+            max-width: 280px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        
+        .payment-card:hover {
+            border-color: var(--green);
+            transform: translateY(-4px);
+        }
+        
+        .payment-card .amount {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+        
+        .payment-card .label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .payment-card .desc {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        
+        .payment-card .pay-btn {
+            display: block;
+            width: 100%;
+            background: var(--green);
+            color: #fff;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        
+        .payment-card .pay-btn:hover {
+            background: #00c896;
+        }
+        
+        .custom-payment {
+            margin-top: 30px;
+        }
+        
+        .custom-payment p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+        
+        .payment-secure {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        .payment-secure img {
+            height: 24px;
+        }
         
         .contact-section {
             padding: 60px 20px;
@@ -255,6 +368,36 @@
                 <h3>Retrofitting</h3>
                 <p>Upgrades & code compliance for older buildings.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="payment-section">
+        <h2>💳 Pay Your Invoice</h2>
+        <p class="subtitle">Secure online payment — fast and easy</p>
+        
+        <div class="payment-options">
+            <div class="payment-card">
+                <div class="amount">$150</div>
+                <div class="label">Service Call</div>
+                <div class="desc">Standard diagnostic & minor repair</div>
+                <a href="#pay-150" class="pay-btn" onclick="alert('Payment coming soon! Call (323) 258-7920 to pay by phone.')">Pay $150</a>
+            </div>
+            <div class="payment-card">
+                <div class="amount">$500</div>
+                <div class="label">Deposit</div>
+                <div class="desc">Standard deposit for larger jobs</div>
+                <a href="#pay-500" class="pay-btn" onclick="alert('Payment coming soon! Call (323) 258-7920 to pay by phone.')">Pay $500</a>
+            </div>
+        </div>
+        
+        <div class="custom-payment">
+            <p>Need to pay a different amount?</p>
+            <a href="tel:+13232587920" class="cta-button green">📞 Call to Pay by Phone</a>
+        </div>
+        
+        <div class="payment-secure">
+            <span>🔒</span>
+            <span>Secure payments powered by Stripe</span>
         </div>
     </section>
     

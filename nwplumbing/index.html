@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NW Plumbing</title>
+    <title>Northwestern Plumbing Co. | Los Angeles Since 1954</title>
+    <meta name="description" content="Northwestern Plumbing Co. - 70 years serving Los Angeles. Commercial & residential plumbing, drain cleaning, water heaters. Call (323) 258-7920.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         
         :root {
             --bg: #0a1628;
             --text: #ffffff;
-            --accent: #00b4d8;
+            --accent: #1e56a0;
+            --accent-light: #3d7dd4;
+            --red: #c41e3a;
             --muted: #7b8fa3;
         }
         
@@ -40,8 +43,16 @@
             margin-bottom: 20px;
         }
         
+        .established {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-light);
+            margin-bottom: 10px;
+        }
+        
         h1 {
-            font-size: clamp(36px, 8vw, 64px);
+            font-size: clamp(32px, 7vw, 56px);
             font-weight: 800;
             margin-bottom: 15px;
             letter-spacing: -1px;
@@ -50,16 +61,22 @@
         .tagline {
             font-size: clamp(18px, 4vw, 24px);
             color: var(--muted);
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             max-width: 500px;
+        }
+        
+        .owner {
+            font-size: 16px;
+            color: var(--accent-light);
+            margin-bottom: 30px;
         }
         
         .cta-button {
             display: inline-block;
             background: var(--accent);
-            color: #000;
+            color: #fff;
             padding: 20px 56px;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             text-decoration: none;
             border-radius: 8px;
@@ -68,29 +85,36 @@
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 180, 216, 0.3);
+            box-shadow: 0 10px 40px rgba(30, 86, 160, 0.4);
+            background: var(--accent-light);
         }
         
         .badges {
             margin-top: 30px;
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
         }
         
         .badge {
-            background: rgba(0, 180, 216, 0.1);
-            border: 1px solid rgba(0, 180, 216, 0.3);
+            background: rgba(30, 86, 160, 0.15);
+            border: 1px solid rgba(30, 86, 160, 0.4);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
-            color: var(--accent);
+            color: var(--accent-light);
+        }
+        
+        .badge.gold {
+            background: rgba(218, 165, 32, 0.15);
+            border-color: rgba(218, 165, 32, 0.4);
+            color: #daa520;
         }
         
         .services {
             padding: 80px 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
@@ -98,12 +122,12 @@
             text-align: center;
             font-size: 28px;
             margin-bottom: 40px;
-            color: var(--accent);
+            color: var(--accent-light);
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
         }
         
@@ -116,8 +140,52 @@
         }
         
         .service-item .icon { font-size: 36px; margin-bottom: 15px; }
-        .service-item h3 { font-size: 18px; margin-bottom: 10px; }
-        .service-item p { font-size: 14px; color: var(--muted); }
+        .service-item h3 { font-size: 16px; margin-bottom: 10px; }
+        .service-item p { font-size: 13px; color: var(--muted); }
+        
+        .contact-section {
+            padding: 60px 20px;
+            background: #0f1f35;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--accent-light);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .contact-item .icon { font-size: 24px; }
+        
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent-light);
+        }
+        
+        .license {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 20px;
+        }
         
         footer {
             padding: 40px 20px;
@@ -126,51 +194,93 @@
             font-size: 13px;
             color: var(--muted);
         }
-        footer a { color: var(--accent); text-decoration: none; }
+        footer a { color: var(--accent-light); text-decoration: none; }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="hero-emoji">🔧</div>
-        <h1>NW Plumbing</h1>
-        <p class="tagline">Professional plumbing you can trust. Fast response, fair prices.</p>
-        <a href="tel:+1XXXXXXXXXX" class="cta-button">📞 Call Now</a>
+        <p class="established">Serving Los Angeles Since 1954</p>
+        <h1>Northwestern Plumbing Co.</h1>
+        <p class="tagline">70 years of trusted plumbing service. Commercial & residential.</p>
+        <p class="owner">David G. Sanchez, Owner</p>
+        <a href="tel:+13232587920" class="cta-button">📞 (323) 258-7920</a>
         <div class="badges">
-            <span class="badge">⚡ Fast Response</span>
-            <span class="badge">✅ Licensed & Insured</span>
-            <span class="badge">💯 Satisfaction Guaranteed</span>
+            <span class="badge gold">🏆 70 Years in Business</span>
+            <span class="badge">✅ Licensed #886021</span>
+            <span class="badge">🏅 PHCC Member</span>
         </div>
     </section>
     
     <section class="services">
-        <h2>Services</h2>
+        <h2>Our Services</h2>
         <div class="services-grid">
             <div class="service-item">
+                <div class="icon">🏠</div>
+                <h3>Residential</h3>
+                <p>Full-service home plumbing repairs & installations.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🏢</div>
+                <h3>Commercial</h3>
+                <p>Business plumbing solutions, big or small.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🔧</div>
+                <h3>Service & Repair</h3>
+                <p>Fast, reliable repairs when you need them.</p>
+            </div>
+            <div class="service-item">
                 <div class="icon">🚿</div>
-                <h3>Leak Repair</h3>
-                <p>Faucets, pipes, fixtures — we stop the drip.</p>
+                <h3>Remodel</h3>
+                <p>Kitchen & bath plumbing for renovations.</p>
             </div>
             <div class="service-item">
                 <div class="icon">🚽</div>
                 <h3>Drain Cleaning</h3>
-                <p>Clogged drains cleared fast. Any drain, any time.</p>
+                <p>Sewer & drain clearing. No clog too tough.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">📹</div>
+                <h3>Video Inspection</h3>
+                <p>Camera inspection to find hidden problems.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">💧</div>
+                <h3>Hydro Jetting</h3>
+                <p>High-pressure cleaning for stubborn blockages.</p>
             </div>
             <div class="service-item">
                 <div class="icon">🔥</div>
-                <h3>Water Heaters</h3>
-                <p>Repair, replacement, installation.</p>
-            </div>
-            <div class="service-item">
-                <div class="icon">🏠</div>
-                <h3>Full Service</h3>
-                <p>New construction, remodels, repairs.</p>
+                <h3>Retrofitting</h3>
+                <p>Upgrades & code compliance for older buildings.</p>
             </div>
         </div>
     </section>
     
+    <section class="contact-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="icon">📞</span>
+                <a href="tel:+13232587920">(323) 258-7920</a>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                <a href="mailto:nwplumbing@sbcglobal.net">nwplumbing@sbcglobal.net</a>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📍</span>
+                <span>5669 York Blvd, Los Angeles, CA 90042</span>
+            </div>
+        </div>
+        <a href="tel:+13232587920" class="cta-button">Call Now</a>
+        <p class="license">California State License #886021 · PHCC Member</p>
+    </section>
+    
     <footer>
-        <p>© 2026 NW Plumbing · Los Angeles, CA</p>
-        <p>Site by <a href="https://textmarco.com">Marco</a> ⚡</p>
+        <p>© 2026 Northwestern Plumbing Co. · Los Angeles, CA · Since 1954</p>
+        <p style="margin-top: 10px;">Site by <a href="https://textmarco.com">Marco</a> ⚡</p>
     </footer>
 </body>
 </html>

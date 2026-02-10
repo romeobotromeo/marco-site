@@ -705,8 +705,7 @@
         /* ========== RESPONSIVE ========== */
         @media (max-width: 600px) {
             header {
-                flex-direction: column;
-                gap: 15px;
+                display: none;
             }
             
             .hero {
@@ -717,6 +716,10 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 5px;
+            }
+            
+            .hero-phone-big {
+                font-size: 2rem;
             }
         }
     </style>
@@ -733,25 +736,26 @@
     </header>
 
     <section class="hero">
-        <div class="hero-badge">🔒 Private Beta — Early Bird: Free Custom URL for 1 Year*</div>
-        
         <div class="countdown-container">
             <div class="countdown-label">Launching in</div>
             <div class="countdown-timer">
-                <div class="countdown-block"><span id="days">06</span><small>Days</small></div>
+                <div class="countdown-block"><span id="days">09</span><small>Days</small></div>
                 <div class="countdown-block"><span id="hours">00</span><small>Hours</small></div>
                 <div class="countdown-block"><span id="minutes">00</span><small>Min</small></div>
                 <div class="countdown-block"><span id="seconds">00</span><small>Sec</small></div>
             </div>
         </div>
-        <h1>Text a picture.<br>Get a website.</h1>
-        <p class="hero-sub">Marco's our grumpy lead designer. Send him a photo of what you like. He'll build it.</p>
+        
+        <a href="sms:+14158436766" class="hero-phone-big" style="display: block; font-size: 2.5rem; font-weight: 800; color: var(--accent); text-decoration: none; margin: 30px 0 10px; letter-spacing: -0.02em;">(415) 843-6766</a>
+        <p class="hero-sub" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px;">You know why you're here.</p>
         
         <div class="hero-price">
             <span class="was">$33/mo</span>
             <span class="amount">$9.99</span>
             <span class="period">/month</span>
         </div>
+        
+        <div class="hero-badge" style="margin-top: 20px;">🔒 Private Beta — Text Marco for a chance to win a year free</div>
         
         <div class="hero-cta">
             <form id="waitlist-form" class="waitlist-form">
@@ -954,7 +958,7 @@
 
 <script>
     // Countdown Timer - Launch: Feb 12, 2026 9:00 AM PT
-    const launchDate = new Date('2026-02-12T09:00:00-08:00').getTime();
+    const launchDate = new Date('2026-02-18T09:00:00-08:00').getTime();
     
     function updateCountdown() {
         const now = new Date().getTime();

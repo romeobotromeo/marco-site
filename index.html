@@ -1051,6 +1051,18 @@
                 messageEl.className = 'form-message success';
                 input.value = '';
                 button.textContent = 'Joined ✓';
+                
+                // Track Lead conversion - GA4
+                gtag('event', 'generate_lead', {
+                    event_category: 'waitlist',
+                    event_label: 'phone_signup'
+                });
+                
+                // Track Lead conversion - Meta Pixel
+                fbq('track', 'Lead', {
+                    content_name: 'Waitlist Signup',
+                    content_category: 'Marco'
+                });
             } else {
                 throw new Error(data.error || 'Something went wrong');
             }

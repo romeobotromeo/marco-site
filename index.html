@@ -920,10 +920,10 @@
         <p class="section-title">Samples</p>
         <h2 class="section-headline">See what Marco's been cooking up.</h2>
         <div class="samples-links">
-            <a href="https://textmarco.com/nwplumbing/">Northwestern Plumbing →</a>
-            <a href="https://textmarco.com/green-thumb-gardens/">Green Thumb Gardens →</a>
-            <a href="https://textmarco.com/ironfit-trainer/">IronFit Personal Training →</a>
-            <a href="https://textmarco.com/joes-handyman/">Joe's Handyman Service →</a>
+            <a href="https://textmarco.com/nwplumbing/" onclick="window.location.href=this.href; return false;">Northwestern Plumbing →</a>
+            <a href="https://textmarco.com/green-thumb-gardens/" onclick="window.location.href=this.href; return false;">Green Thumb Gardens →</a>
+            <a href="https://textmarco.com/ironfit-trainer/" onclick="window.location.href=this.href; return false;">IronFit Personal Training →</a>
+            <a href="https://textmarco.com/joes-handyman/" onclick="window.location.href=this.href; return false;">Joe's Handyman Service →</a>
         </div>
     </section>
 
@@ -1083,16 +1083,6 @@
     
     document.getElementById('waitlist-form-2').addEventListener('submit', (e) => {
         handleWaitlistSubmit(e, 'waitlist-form-2', 'form-message-2');
-    });
-    
-    // Fix sample links - force navigation on click
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.samples-links a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.href = link.href;
-            });
-        });
     });
 </script>
 </body>

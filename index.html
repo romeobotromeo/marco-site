@@ -702,15 +702,26 @@
             max-width: 450px;
         }
         
+        /* ========== NAVIGATION ========== */
+        header nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        header nav a[href="sms:+14158436766"]:hover {
+            transform: translateY(-1px);
+            color: #000;
+        }
+        
         /* ========== RESPONSIVE ========== */
         @media (max-width: 600px) {
             header {
-                justify-content: center;
+                flex-direction: column;
+                gap: 15px;
                 padding: 15px 20px;
             }
             
-            header .header-cta {
-                display: none;
+            header nav {
+                gap: 20px;
             }
             
             .hero {
@@ -731,8 +742,12 @@
 </head>
 <body>
 
-    <header style="justify-content: center; padding: 20px;">
-        <div class="logo" style="text-align: center;"><span>MARCO</span> <span style="color: var(--text-muted); font-size: 10px; letter-spacing: 0.1em;">by JWGRE</span></div>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; max-width: 1200px; margin: 0 auto;">
+        <div class="logo"><span>MARCO</span> <span style="color: var(--text-muted); font-size: 10px; letter-spacing: 0.1em;">by JWGRE</span></div>
+        <nav style="display: flex; gap: 30px; align-items: center;">
+            <a href="/pricing" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.2s;">Pricing</a>
+            <a href="sms:+14158436766" style="background: var(--accent); color: #000; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: transform 0.2s;">Text Marco</a>
+        </nav>
     </header>
 
     <section class="hero">
@@ -950,7 +965,7 @@
             We're fast, not magic. © 2026 JWGRE LLC.
             <br>*Free custom URL offer applies to domains valued at $20 or less.
             <br><br>
-            <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms & Conditions</a>
+            <a href="/pricing">Pricing</a> · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms & Conditions</a>
             <br>Message and data rates may apply. Text STOP to cancel. Text HELP for help.
         </div>
     </footer>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Thumb Gardens</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --bg: #0d1f0d;
+            --text: #ffffff;
+            --accent: #4ade80;
+            --muted: #7a9a7a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, var(--bg) 0%, #061206 100%);
+        }
+        
+        .hero-emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: clamp(36px, 8vw, 64px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tagline {
+            font-size: clamp(18px, 4vw, 24px);
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 20px 56px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(74, 222, 128, 0.3);
+        }
+        
+        .contact-alt {
+            margin-top: 20px;
+            font-size: 16px;
+            color: var(--muted);
+        }
+        
+        .contact-alt a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .services {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: var(--accent);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-item {
+            background: #132613;
+            border: 1px solid #1e3d1e;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .service-item .icon { font-size: 36px; margin-bottom: 15px; }
+        .service-item h3 { font-size: 18px; margin-bottom: 10px; }
+        .service-item p { font-size: 14px; color: var(--muted); }
+        
+        .testimonial {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .testimonial blockquote {
+            font-size: 20px;
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial cite {
+            color: var(--accent);
+            font-size: 14px;
+        }
+        
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1e3d1e;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-emoji">🌿</div>
+        <h1>Green Thumb Gardens</h1>
+        <p class="tagline">Beautiful yards. Happy plants. Weekly maintenance or one-time cleanups.</p>
+        <a href="tel:+18185551234" class="cta-button">📞 (818) 555-1234</a>
+        <p class="contact-alt">or text me anytime</p>
+    </section>
+    
+    <section class="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="icon">🌱</div>
+                <h3>Weekly Maintenance</h3>
+                <p>Mowing, edging, trimming, blowing. Your yard always looking fresh.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">✂️</div>
+                <h3>One-Time Cleanups</h3>
+                <p>Overgrown yard? Moving? I'll get it back in shape.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🌺</div>
+                <h3>Planting & Design</h3>
+                <p>New beds, drought-tolerant plants, CA natives.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">💧</div>
+                <h3>Irrigation</h3>
+                <p>Drip systems, sprinkler repair, smart timers.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🌳</div>
+                <h3>Tree Trimming</h3>
+                <p>Small to medium trees. Keep 'em healthy and safe.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🧹</div>
+                <h3>Hardscape Cleaning</h3>
+                <p>Patios, driveways, walkways pressure washed.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonial">
+        <blockquote>"Carlos has been taking care of our yard for 3 years. Always on time, always thorough. Our neighbors are jealous."</blockquote>
+        <cite>— Maria R., Sherman Oaks</cite>
+    </section>
+    
+    <footer>
+        <p>© 2026 Green Thumb Gardens · San Fernando Valley</p>
+        <p>Site by <a href="https://textmarco.com">Marco</a> 🌱</p>
+    </footer>
+</body>
+</html>

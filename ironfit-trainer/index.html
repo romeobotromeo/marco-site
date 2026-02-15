@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronFit | Personal Training</title>
+    <meta name="description" content="Certified personal trainer. One-on-one training, online coaching, nutrition guidance. Transform your body and mindset. Text to book your free session.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --lime: #84CC16;
+            --dark: #18181B;
+            --gray: #71717A;
+            --light: #F4F4F5;
+        }
+        
+        body {
+            font-family: 'Barlow', -apple-system, sans-serif;
+            background: var(--dark);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(ellipse at top, #27272A 0%, var(--dark) 100%);
+        }
+        
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: clamp(4rem, 15vw, 8rem);
+            font-weight: 700;
+            line-height: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        h1 span {
+            color: var(--lime);
+        }
+        
+        .subtitle {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: #A1A1AA;
+            margin-bottom: 2.5rem;
+            max-width: 400px;
+        }
+        
+        .cta-button {
+            background: var(--lime);
+            color: var(--dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: #A3E635;
+            transform: scale(1.05);
+        }
+        
+        .free-session {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--lime);
+        }
+        
+        /* Services */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            text-align: center;
+            border-bottom: 4px solid var(--lime);
+        }
+        
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card .price {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .service-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+        
+        /* About */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--dark);
+            text-align: center;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .about p {
+            color: #A1A1AA;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .cert {
+            background: #27272A;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--lime);
+        }
+        
+        /* Results */
+        .results {
+            padding: 4rem 2rem;
+            background: var(--lime);
+            color: var(--dark);
+        }
+        
+        .results h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .results-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .result .number {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+        }
+        
+        .result .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* CTA */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: var(--dark);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: #A1A1AA;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #0a0a0a;
+            color: #52525B;
+            font-size: 0.85rem;
+        }
+        
+        footer a {
+            color: var(--lime);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-icon">💪</div>
+        <h1>IRON<span>FIT</span></h1>
+        <div class="subtitle">Personal Training</div>
+        <p class="tagline">Transform your body. Strengthen your mindset. Results guaranteed or your money back.</p>
+        <a href="sms:+14155551234?body=Hi, I'm interested in personal training" class="cta-button">Book Free Session</a>
+        <div class="free-session">✓ First session is always free</div>
+    </section>
+    
+    <section class="services">
+        <h2>Training Options</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🏋️</div>
+                <h3>1-on-1 Training</h3>
+                <p>Personalized workouts at my private gym or yours. Full attention, maximum results.</p>
+                <div class="price">$85 <span>/ session</span></div>
+            </div>
+            <div class="service-card">
+                <div class="icon">👥</div>
+                <h3>Partner Training</h3>
+                <p>Train with a friend or partner. Split the cost, double the accountability.</p>
+                <div class="price">$120 <span>/ session for 2</span></div>
+            </div>
+            <div class="service-card">
+                <div class="icon">📱</div>
+                <h3>Online Coaching</h3>
+                <p>Custom program, weekly check-ins, 24/7 text support. Train anywhere.</p>
+                <div class="price">$199 <span>/ month</span></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <h2>Meet Your Trainer</h2>
+        <div class="about-content">
+            <p>I'm Marcus — NASM certified personal trainer with 8+ years of experience helping everyday people achieve extraordinary results.</p>
+            <p>Whether you want to lose weight, build muscle, or just feel better in your body, I'll create a program that fits your life and gets you where you want to be.</p>
+            <div class="certifications">
+                <span class="cert">NASM-CPT</span>
+                <span class="cert">Precision Nutrition</span>
+                <span class="cert">TRX Certified</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="results">
+        <h2>Client Results</h2>
+        <div class="results-grid">
+            <div class="result">
+                <div class="number">200+</div>
+                <div class="label">Clients Trained</div>
+            </div>
+            <div class="result">
+                <div class="number">5,000+</div>
+                <div class="label">Lbs Lost (Combined)</div>
+            </div>
+            <div class="result">
+                <div class="number">98%</div>
+                <div class="label">Client Retention</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <h2>Ready to Start?</h2>
+        <p>Text me your goals — I'll respond within an hour with a game plan tailored to you.</p>
+        <a href="sms:+14155551234?body=Hi Marcus, my fitness goal is" class="cta-button">Text Me Now</a>
+    </section>
+    
+    <footer>
+        <p>IronFit Personal Training · San Francisco Bay Area</p>
+        <p style="margin-top: 0.5rem;">Site powered by <a href="https://textmarco.com">Text Marco</a></p>
+    </footer>
+</body>
+</html>

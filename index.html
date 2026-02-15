@@ -1084,6 +1084,16 @@
     document.getElementById('waitlist-form-2').addEventListener('submit', (e) => {
         handleWaitlistSubmit(e, 'waitlist-form-2', 'form-message-2');
     });
+    
+    // Fix sample links - force navigation on click
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.samples-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = link.href;
+            });
+        });
+    });
 </script>
 </body>
 </html>

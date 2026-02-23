@@ -761,6 +761,17 @@
     </header>
 
     <section class="hero">
+        <!-- Countdown moved above phone number -->
+        <div class="countdown-container" style="margin-bottom: 30px;">
+            <div class="countdown-label">Launching in</div>
+            <div class="countdown-timer">
+                <div class="countdown-block"><span id="days">09</span><small>Days</small></div>
+                <div class="countdown-block"><span id="hours">00</span><small>Hours</small></div>
+                <div class="countdown-block"><span id="minutes">00</span><small>Min</small></div>
+                <div class="countdown-block"><span id="seconds">00</span><small>Sec</small></div>
+            </div>
+        </div>
+
         <a href="sms:+14158436766" class="hero-phone-big" style="display: block; font-size: clamp(5rem, 15vw, 8rem); font-weight: 800; color: #bbb; text-decoration: none; margin: 0 0 10px; letter-spacing: -0.02em; line-height: 1; cursor: pointer; -webkit-tap-highlight-color: transparent;">(415)<br>843-<br>6766</a>
         
         <p style="font-size: 1rem; color: var(--accent); margin-bottom: 15px; font-weight: 500;">Marco is an AI-powered SMS assistant that builds and updates your website through text messages. Text Marco to get started.</p>
@@ -774,14 +785,15 @@
         
         <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 30px;">You know why you're here. Text Marco. See what happens.</p>
         
-        <div class="countdown-container">
-            <div class="countdown-label">Launching in</div>
-            <div class="countdown-timer">
-                <div class="countdown-block"><span id="days">09</span><small>Days</small></div>
-                <div class="countdown-block"><span id="hours">00</span><small>Hours</small></div>
-                <div class="countdown-block"><span id="minutes">00</span><small>Min</small></div>
-                <div class="countdown-block"><span id="seconds">00</span><small>Sec</small></div>
-            </div>
+        <!-- Hero text in neon box where countdown was -->
+        <div style="background: var(--bg-card); border: 2px solid var(--accent); border-radius: 12px; padding: 30px; margin: 30px auto; max-width: 600px; box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);">
+            <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 20px; text-align: center; line-height: 1.1;">
+                Your website,<br><span style="color: var(--accent);">one text away.</span>
+            </h2>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); margin: 0; text-align: center; line-height: 1.4;">
+                No sign-ups. No interfaces. No experience needed.<br>
+                Just text Marco what you want — and that's it.
+            </p>
         </div>
         
         <div class="hero-badge" style="margin: 25px auto; font-size: 9px; padding: 8px 20px;">🔒 Private Beta · $9.99/mo · No setup fees. No contracts.</div>
